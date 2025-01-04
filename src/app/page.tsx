@@ -55,7 +55,7 @@ export default function Home() {
           <span className="text-purple-600">transparent giving</span> 
         </p>
         <Link href="/donate">
-          <Button size="lg" className="bg-rose-500 hover:bg-rose-600">
+          <Button size="lg" className="font-bold bg-rose-500 hover:bg-rose-700">
             Donate Now
           </Button>
         </Link>

@@ -1,9 +1,6 @@
 import "./globals.css"
-import { Inter } from 'next/font/google'
 import { Metadata } from "next"
 import AppWalletProvider from "../components/AppWalletProvider";
-
-const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "CharityBlock - Decentralized Donations on Solana",
