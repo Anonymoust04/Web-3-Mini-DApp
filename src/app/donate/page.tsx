@@ -4,13 +4,10 @@ import { CustomProgress } from "@/components/ui/custom-progress"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { GlowButton } from "@/components/ui/glow-button"
 import { DonationDialog } from "@/components/donation-dialog"
-import { ArrowRight, Globe, Heart, Users } from 'lucide-react'
+import {Globe, Heart, Users } from 'lucide-react'
 import Image from "next/image"
 import Link from "next/link"
-
-var eduImg = require("../education.png")
-var envImg = require("../environment.png")
-var healthImg = require("../patient.png")
+import {eduImg, envImg, healthImg} from "../donate/images"
 
 interface DonationCause {
   id: string
