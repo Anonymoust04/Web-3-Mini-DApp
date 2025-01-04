@@ -6,6 +6,7 @@ import Link from "next/link"
 import SolanaImg from "./solana.png"
 import BitcoinImg from "./bitcoin.png"
 import EthereumImg from "./ethereum.png"
+import { Label } from "@/components/ui/label"
 
 export default function Home() {
   return (
@@ -78,30 +79,38 @@ export default function Home() {
 
       {/* Trust Indicators */}
       <footer className="container mx-auto px-4 py-12 text-center border-t border-gray-800">
-        <p className="text-sm text-gray-500 mb-4">BACKED BY</p>
+        <p className="text-sm text-gray-500 mb-9">BACKED BY</p>
         <div className="flex justify-center items-center gap-12 opacity-75">
-          <Image
-            src= {SolanaImg}
-            alt="Solana Logo"
-            aria-label="Solana"
-            width={100}
-            height={30}
-            className="opacity-1000 hover:opacity-100 transition-opacity"
-          />
-          <Image
-            src={BitcoinImg}
-            alt="Bitcoin Logo"
-            width={100}
-            height={30}
-            className="opacity-500 brightness-100 hover:opacity-500 transition-opacity"
-          />
-          <Image
-            src= {EthereumImg}
-            alt="Ethereum Logo"
-            width={100}
-            height={30}
-            className="opacity-500 hover:opacity-500 transition-opacity"
-          />
+          <div>
+            <Image
+              src= {SolanaImg}
+              alt="Solana Logo"
+              width={95}
+              height={30}
+              className="opacity-1000 hover:opacity-100 transition-opacity mt-0"
+            />
+            <Label>Solana</Label>
+          </div>
+          <div>
+            <Image
+              src={BitcoinImg}
+              alt="Bitcoin Logo"
+              width={50}
+              height={70}
+              className="opacity-500 brightness-100 hover:opacity-500 transition-opacity ml-12 pb-1"
+            />
+            <Label>Bitcoin (Coming Soon) </Label>
+          </div>
+          <div>
+            <Image
+              src= {EthereumImg}
+              alt="Ethereum Logo"
+              width={55}
+              height={70}
+              className="opacity-500 hover:opacity-500 transition-opacity ml-12"
+              />
+            <Label>Ethereum (Coming Soon) </Label>
+          </div>
         </div>
       </footer>
       <footer className="relative z-10 border-t border-gray-800 mt-20 py-8 text-center text-gray-400">
