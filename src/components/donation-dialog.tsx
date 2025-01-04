@@ -8,7 +8,6 @@ import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { useConnection, useWallet } from "@solana/wallet-adapter-react"
 import { LAMPORTS_PER_SOL } from "@solana/web3.js"
-import { useToast } from "@/hooks/use-toast"
 
 interface DonationDialogProps {
   causeName: string
@@ -20,7 +19,6 @@ export function DonationDialog({ causeName }: DonationDialogProps) {
   const [balance, setBalance] = useState<number>(0);
 
   const [isOpen, setIsOpen] = useState(false)
-  const { toast } = useToast()
  
   useEffect(() => {
     if (publicKey) {
