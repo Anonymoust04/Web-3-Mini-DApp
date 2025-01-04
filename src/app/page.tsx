@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Heart, Shield, Wallet } from 'lucide-react'
@@ -7,6 +9,7 @@ import SolanaImg from "./solana.png"
 import BitcoinImg from "./bitcoin.png"
 import EthereumImg from "./ethereum.png"
 import { Label } from "@/components/ui/label"
+import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
 
 export default function Home() {
   return (
@@ -24,9 +27,17 @@ export default function Home() {
           <Heart className="w-6 h-6 text-rose-500" />
           <span className="font-bold text-xl">CharityBlock</span>
         </div>
-        <Button variant="outline" className="border-rose-500 text-rose-500 hover:bg-red-900 hover:text-white">
-          Connect Wallet
-        </Button>
+        <WalletMultiButton     
+          style={{
+              backgroundColor: "white",
+              color: "black",
+              padding: "0.5rem 1rem",
+              borderRadius: "0.5rem",
+              fontSize: "1rem",
+              fontWeight: "lighter",
+              height: "2.5rem",
+            }}
+          />
       </header>
 
       {/* Hero Section */}

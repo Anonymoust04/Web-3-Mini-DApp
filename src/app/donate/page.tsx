@@ -1,13 +1,15 @@
+"use client"
+
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { CustomProgress } from "@/components/ui/custom-progress"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { GlowButton } from "@/components/ui/glow-button"
 import { DonationDialog } from "@/components/donation-dialog"
 import {Globe, Heart, Users } from 'lucide-react'
 import Image, { StaticImageData } from "next/image"
 import Link from "next/link"
 import {eduImg, envImg, healthImg} from "../donate/images"
+import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
 
 interface DonationCause {
   id: string
@@ -68,13 +70,17 @@ export default function DonatePage() {
 
             {/* Right Section */}
             <div className="flex items-center gap-4">
-              <GlowButton 
-                showArrow={false}
-                className="text-sm hover:bg-rose-500"
-                glowColor="rgba(220, 43, 82, 0.3)"
-              >
-                Connect Wallet
-              </GlowButton>
+                <WalletMultiButton     
+                    style={{
+                        backgroundColor: "white",
+                        color: "black",
+                        padding: "0.5rem 1rem",
+                        borderRadius: "0.5rem",
+                        fontSize: "1rem",
+                        fontWeight: "lighter",
+                        height: "2.5rem",
+                    }}
+                />
             </div>
           </div>
         </div>
