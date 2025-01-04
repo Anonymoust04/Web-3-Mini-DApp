@@ -1,117 +1,113 @@
-"use client";
+import { Button } from "@/components/ui/button"
+import { Card } from "@/components/ui/card"
+import { Heart, Shield, Wallet } from 'lucide-react'
+import Image from "next/image"
+import Link from "next/link"
+import SolanaImg from "./solana.png"
+import BitcoinImg from "./bitcoin.png"
+import EthereumImg from "./ethereum.png"
 
-import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
-import { ArrowRight, Wallet, Shield, Zap } from "lucide-react";
-
-export default function LandingPage() {
+export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-900 via-gray-900 to-black text-white overflow-hidden">
-      <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div>
+    <div className="min-h-screen bg-[#0A0B0D] text-white">
+      {/* Warning Banner */}
+      <div className="bg-[#FFD700]/10 text-[#FFD700] px-4 py-2 text-sm text-center">
+        <p>
+          Currently supporting donations in SOL.
+        </p>
+      </div>
 
-      <header className="relative z-10 p-6">
-        <nav className="container mx-auto flex justify-between items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            <h1 className="text-2xl font-bold">SolanaWallet</h1>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
-            <Link href="/wallet">
-              <Button
-                variant="outline"
-                className="text-gray-500 border-white hover:bg-white hover:text-black transition-colors"
-              >
-                Launch App
-              </Button>
-            </Link>
-          </motion.div>
-        </nav>
+      {/* Header */}
+      <header className="container mx-auto px-4 py-6 flex items-center justify-between">
+        <div className="flex items-center gap-2">
+          <Heart className="w-6 h-6 text-rose-500" />
+          <span className="font-bold text-xl">CharityBlock</span>
+        </div>
+        <Button variant="outline" className="border-rose-500 text-rose-500 hover:bg-red-900 hover:text-white">
+          Connect Wallet
+        </Button>
       </header>
 
-      <main className="relative z-10 container mx-auto py-20 px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-5xl md:text-7xl font-extrabold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">
-            Your Gateway to Solana
-          </h2>
-          <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto">
-            Experience the future of decentralized finance with our intuitive
-            Solana wallet interface.
-          </p>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="flex justify-center mb-20"
-        >
-          <Link href="/wallet">
-            <Button
-              size="lg"
-              className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-6 text-lg rounded-full transition-all hover:scale-105"
-            >
-              Get Started <ArrowRight className="ml-2" />
-            </Button>
-          </Link>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 60 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="grid md:grid-cols-3 gap-8"
-        >
-          {[
-            {
-              icon: Wallet,
-              title: "Easy Management",
-              description:
-                "Effortlessly manage your Solana tokens and NFTs in one place.",
-            },
-            {
-              icon: Shield,
-              title: "Secure Transactions",
-              description:
-                "Enjoy peace of mind with our robust security measures.",
-            },
-            {
-              icon: Zap,
-              title: "Lightning Fast",
-              description:
-                "Experience the speed of Solana with near-instant transactions.",
-            },
-          ].map((feature, index) => (
-            <motion.div
-              key={index}
-              whileHover={{ scale: 1.05 }}
-              className="bg-gray-800 bg-opacity-50 p-6 rounded-lg backdrop-blur-sm"
-            >
-              <feature.icon className="w-12 h-12 mb-4 text-purple-400" />
-              <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-              <p className="text-gray-400">{feature.description}</p>
-            </motion.div>
-          ))}
-        </motion.div>
+      {/* Hero Section */}
+      <main className="container mx-auto px-4 py-24 text-center">
+        <h1 className="text-4xl md:text-6xl font-bold mb-6">
+          Decentralized Donations
+          <br />
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-purple-600">
+            for Global Impact
+          </span>
+        </h1>
+        <p className="text-xl text-gray-400 mb-12 max-w-2xl mx-auto">
+          with{" "}
+          <span className="text-rose-500">self-custodial</span> &{" "}
+          <span className="text-purple-600">transparent giving</span> 
+        </p>
+        <Link href="/donate">
+          <Button size="lg" className="bg-rose-500 hover:bg-rose-600">
+            Donate Now
+          </Button>
+        </Link>
       </main>
 
-      <footer className="relative z-10 border-t border-gray-800 mt-20 py-8 text-center text-gray-400">
-        <p>&copy; 2024 SolanaWallet. All rights reserved.</p>
-      </footer>
+      {/* Features Grid */}
+      <section className="container mx-auto px-4 py-24">
+        <div className="grid md:grid-cols-3 gap-8">
+          <Card className="p-6 bg-gray-900/50 border-gray-800">
+            <Shield className="w-12 h-12 text-rose-500 mb-4" />
+            <h3 className="text-xl font-bold mb-2">Secure & Transparent</h3>
+            <p className="text-gray-400">
+              All transactions are recorded on-chain, ensuring complete transparency and accountability.
+            </p>
+          </Card>
+          <Card className="p-6 bg-gray-900/50 border-gray-800">
+            <Wallet className="w-12 h-12 text-purple-600 mb-4" />
+            <h3 className="text-xl font-bold mb-2">Multiple Tokens</h3>
+            <p className="text-gray-400">
+              Donate using various Solana tokens, including SOL, BitCoin, and popular meme tokens.
+            </p>
+          </Card>
+          <Card className="p-6 bg-gray-900/50 border-gray-800">
+            <Heart className="w-12 h-12 text-rose-500 mb-4" />
+            <h3 className="text-xl font-bold mb-2">Direct Impact</h3>
+            <p className="text-gray-400">
+              Your donations go directly to verified charitable organizations with minimal fees.
+            </p>
+          </Card>
+        </div>
+      </section>
 
-      <div className="fixed bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-purple-400 via-pink-500 to-red-500"></div>
+      {/* Trust Indicators */}
+      <footer className="container mx-auto px-4 py-12 text-center border-t border-gray-800">
+        <p className="text-sm text-gray-500 mb-4">BACKED BY</p>
+        <div className="flex justify-center items-center gap-12 opacity-75">
+          <Image
+            src= {SolanaImg}
+            alt="Solana Logo"
+            aria-label="Solana"
+            width={100}
+            height={30}
+            className="opacity-1000 hover:opacity-100 transition-opacity"
+          />
+          <Image
+            src={BitcoinImg}
+            alt="Bitcoin Logo"
+            width={100}
+            height={30}
+            className="opacity-500 brightness-100 hover:opacity-500 transition-opacity"
+          />
+          <Image
+            src= {EthereumImg}
+            alt="Ethereum Logo"
+            width={100}
+            height={30}
+            className="opacity-500 hover:opacity-500 transition-opacity"
+          />
+        </div>
+      </footer>
+      <footer className="relative z-10 border-t border-gray-800 mt-20 py-8 text-center text-gray-400">
+        <p>&copy; 2025 CharityBlock. All rights reserved.</p>
+      </footer>
     </div>
-  );
+  )
 }
+
