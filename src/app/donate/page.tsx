@@ -5,7 +5,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { GlowButton } from "@/components/ui/glow-button"
 import { DonationDialog } from "@/components/donation-dialog"
 import {Globe, Heart, Users } from 'lucide-react'
-import Image from "next/image"
+import Image, { StaticImageData } from "next/image"
 import Link from "next/link"
 import {eduImg, envImg, healthImg} from "../donate/images"
 
@@ -17,7 +17,7 @@ interface DonationCause {
   raised: number
   goal: number
   donors: number
-  image: any
+  image: StaticImageData
 }
 
 const causes: DonationCause[] = [
