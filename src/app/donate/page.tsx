@@ -130,7 +130,7 @@ export default function DonatePage() {
                           {cause.donors} donors
                         </span>
                       </div>
-                      <CardTitle className="text-xl mb-2">{cause.title}</CardTitle>
+                      <CardTitle className="text-xl mb-2 text-white">{cause.title}</CardTitle>
                       <CardDescription className="text-gray-400">
                         {cause.description}
                       </CardDescription>
@@ -181,7 +181,7 @@ export default function DonatePage() {
                           {cause.donors} donors
                         </span>
                       </div>
-                      <CardTitle className="text-xl mb-2">{cause.title}</CardTitle>
+                      <CardTitle className="text-xl mb-2 text-white">{cause.title}</CardTitle>
                       <CardDescription className="text-gray-400">
                         {cause.description}
                       </CardDescription>
@@ -232,7 +232,7 @@ export default function DonatePage() {
                           {cause.donors} donors
                         </span>
                       </div>
-                      <CardTitle className="text-xl mb-2 text-white">{cause.title}</CardTitle>
+                      <CardTitle className="text-xl text-white mb-2">{cause.title}</CardTitle>
                       <CardDescription className="text-gray-400">
                         {cause.description}
                       </CardDescription>
@@ -283,7 +283,7 @@ export default function DonatePage() {
                           {cause.donors} donors
                         </span>
                       </div>
-                      <CardTitle className="text-xl mb-2">{cause.title}</CardTitle>
+                      <CardTitle className="text-xl mb-2 text-white">{cause.title}</CardTitle>
                       <CardDescription className="text-gray-400">
                         {cause.description}
                       </CardDescription>
